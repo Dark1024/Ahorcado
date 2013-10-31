@@ -54,7 +54,12 @@ function setCharAt(str,index,chr) {
 }
 
 function setCurrentWord(){
-	currentWord = listOfWords[1];
+	var index = 0;
+	do{
+		index = Math.floor(Math.random()*100);		
+	}while(index>=77);
+	console.log(index);
+	currentWord = listOfWords[index];
 	word="";
 	errors = 0;
 
