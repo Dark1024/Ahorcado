@@ -1,0 +1,40 @@
+.defaultValues{
+	background-color: rgba(80,235,30,0.5);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	text-align: center;
+	margin: 30px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	font-family: Verdana
+}
+
+#canvasdiv{
+	margin-left: 300px;
+	height: 400px;
+	width: 700px;
+}
+
+#myCanvas{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+#mainbuttondiv{
+	height: 50px;
+}
+#buttons{
+	height: 70px;
+}
+
+.letter-button{
+	margin-top: 20px;
+}
+
+body{
+	background-color: #909090;
+}
