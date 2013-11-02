@@ -3,46 +3,52 @@
 	<head>
 		<title>Ahorcado</title>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		   <!-- Bootstrap -->
+		   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="functions.js"></script> 
 	</head>
 	<body onload="startGame()">
-		<div class="defaultValues" id="maindiv">
+		<div id="maindiv">
 			<h1>Ahorcado</h1>
 		</div>
 		<div class="defaultValues" id="canvasdiv">
 			<canvas id="myCanvas" style="height: 300px"></canvas><br>	
 		</div>
-		<div class="defaultValues" id="mainbuttondiv">
-			<input type="button" id="button-play" onclick="setCurrentWord()" value="Jugar Ahora!">
+		<button type="button" class="btn btn-warning" id="button-play" onclick="setCurrentWord()">Jugar Ahora!</button>
+		<div class="defaultValues" id="buttons">
+			<button type="button" class="btn btn-danger letter-button" id="button-a" onclick="setLetter('a')">a</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-b" onclick="setLetter('b')">b</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-c" onclick="setLetter('c')">c</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-d" onclick="setLetter('d')">d</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-e" onclick="setLetter('e')">e</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-f" onclick="setLetter('f')">f</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-g" onclick="setLetter('g')">g</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-h" onclick="setLetter('h')">h</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-i" onclick="setLetter('i')">i</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-j" onclick="setLetter('j')">j</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-k" onclick="setLetter('k')">k</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-l" onclick="setLetter('l')">l</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-m" onclick="setLetter('m')">m</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-n" onclick="setLetter('n')">n</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-o" onclick="setLetter('o')">o</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-p" onclick="setLetter('p')">p</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-q" onclick="setLetter('q')">q</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-r" onclick="setLetter('r')">r</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-s" onclick="setLetter('s')">s</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-t" onclick="setLetter('t')">t</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-u" onclick="setLetter('u')">u</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-v" onclick="setLetter('v')">v</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-w" onclick="setLetter('w')">w</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-x" onclick="setLetter('x')">x</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-y" onclick="setLetter('y')">y</button>
+			<button type="button" class="btn btn-danger letter-button" id="button-z" onclick="setLetter('z')">z</button>
 		</div>
-		<div class="defaultValues" id="buttons" style="background-color: blue">
-			<input type="button" class="letter-button" id="button-a" onclick="setLetter('a')" value="a">
-			<input type="button" class="letter-button" id="button-b" onclick="setLetter('b')" value="b">
-			<input type="button" class="letter-button" id="button-c" onclick="setLetter('c')" value="c">
-			<input type="button" class="letter-button" id="button-d" onclick="setLetter('d')" value="d">
-			<input type="button" class="letter-button" id="button-e" onclick="setLetter('e')" value="e">
-			<input type="button" class="letter-button" id="button-f" onclick="setLetter('f')" value="f">
-			<input type="button" class="letter-button" id="button-g" onclick="setLetter('g')" value="g">
-			<input type="button" class="letter-button" id="button-h" onclick="setLetter('h')" value="h">
-			<input type="button" class="letter-button" id="button-i" onclick="setLetter('i')" value="i">
-			<input type="button" class="letter-button" id="button-j" onclick="setLetter('j')" value="j">
-			<input type="button" class="letter-button" id="button-k" onclick="setLetter('k')" value="k">
-			<input type="button" class="letter-button" id="button-l" onclick="setLetter('l')" value="l">
-			<input type="button" class="letter-button" id="button-m" onclick="setLetter('m')" value="m">
-			<input type="button" class="letter-button" id="button-n" onclick="setLetter('n')" value="n">
-			<input type="button" class="letter-button" id="button-o" onclick="setLetter('o')" value="o">
-			<input type="button" class="letter-button" id="button-p" onclick="setLetter('p')" value="p">
-			<input type="button" class="letter-button" id="button-q" onclick="setLetter('q')" value="q">
-			<input type="button" class="letter-button" id="button-r" onclick="setLetter('r')" value="r">
-			<input type="button" class="letter-button" id="button-s" onclick="setLetter('s')" value="s">
-			<input type="button" class="letter-button" id="button-t" onclick="setLetter('t')" value="t">
-			<input type="button" class="letter-button" id="button-u" onclick="setLetter('u')" value="u">
-			<input type="button" class="letter-button" id="button-v" onclick="setLetter('v')" value="v">
-			<input type="button" class="letter-button" id="button-w" onclick="setLetter('w')" value="w">
-			<input type="button" class="letter-button" id="button-x" onclick="setLetter('x')" value="x">
-			<input type="button" class="letter-button" id="button-y" onclick="setLetter('y')" value="y">
-			<input type="button" class="letter-button" id="button-z" onclick="setLetter('z')" value="z">
-		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		    <script src="https://code.jquery.com/jquery.js"></script>
+		    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		    <script src="bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>

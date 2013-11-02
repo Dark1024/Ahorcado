@@ -1,9 +1,6 @@
 .defaultValues{
-	background-color: rgba(80,235,30,0.5);
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
+	background-color: #5A7CC9;
+	border-radius: 15px;
 	text-align: center;
 	margin: 30px;
 	margin-top: 25px;
@@ -18,10 +15,8 @@
 }
 
 #myCanvas{
-	margin-top: 50px;
-	margin-bottom: 50px;
-	margin-right: 50px;
-	margin-left: 50px;
+	margin:50px;
+	background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
 }
 
 #mainbuttondiv{
@@ -36,5 +31,14 @@
 }
 
 body{
-	background-color: #909090;
+	background-color: #2DB5A2;
+	text-align: center;
+}
+
+h1{
+	text-align: center;
+	margin: 30px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	font-family: Verdana
 }

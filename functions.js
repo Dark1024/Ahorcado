@@ -14,10 +14,12 @@ function setLetter(letter){
 		start = temp + 1;
 	}
 
+	draw();
 	for (var i = 0; i < currentWord.length; i++) {
 		if(currentWord.charAt(i) != letter){
 			if (i == currentWord.length-1) {
 				errors++;
+				draw();
 			}
 		}else{
 			break;
@@ -31,20 +33,25 @@ function setLetter(letter){
 }
 
 function valiteWinGame(){
+	var message="";
 	if (errors < 5) {
 		for (var i = 0; i < word.length; i++) {
 			if (word.charAt(i) == "_") {
 				break;
 			}else{
 				if((i == word.length -1) && errors < 5){
-					alert("Ganaste el Juego!!!!");
+					message+="Ganaste el Juego!";
+					alert(message);
 					disableButtons();
 				}
 			}
 		}
 	}else{
-		alert("Juego Terminado!!!");
+		message+="Juego Terminado!";
+		word=currentWord;
 		disableButtons();
+		alert(message);
+		
 	}
 }
 
@@ -77,7 +84,7 @@ function enableButtons(){
 	for (var i = 0; i < elements.length; i++) {
 		elements[i].disabled=false;
 	}
-	setCanvas();
+	draw();
 }
 
 function disableButtons(){
@@ -85,16 +92,85 @@ function disableButtons(){
 	for (var i = 0; i < elements.length; i++) {
 		elements[i].disabled=true;
 	}
-}
-
-function setCanvas(){
-	var canvas = document.getElementById("myCanvas");
-	var ctx = canvas.getContext('2d');
-	ctx.fillStyle='#FF0000';
-	ctx.fillRect(0,0,500,500)
+	draw();
 }
 
 function startGame(){
-	setCanvas();
 	disableButtons();
+}
+
+function draw(){
+	var canvas = document.getElementById("myCanvas");
+	if(canvas.getContext){
+		var ctx = canvas.getContext('2d');
+
+		ctx.beginPath();
+		ctx.clearRect(0,0,400,400);
+		ctx.fillStyle = "rgb(0,0,0)";
+		
+		ctx.font = "bold 14px Verdana";
+		ctx.fillText(word,140,140);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(80,270);
+		ctx.lineTo(80,0);
+		ctx.lineTo(180,0);
+		ctx.lineTo(180,30);
+		ctx.stroke();
+
+		if(errors>=1){
+			ctx.beginPath();
+			ctx.arc(180,40,10,0,Math.PI*2,true);
+			ctx.closePath();
+			ctx.stroke();
+		}
+
+		if(errors>=2){
+			ctx.beginPath();
+			ctx.moveTo(180,50);
+			ctx.lineTo(180,100);
+			ctx.stroke();
+		}
+
+		if (errors>=3) {
+			ctx.beginPath();
+			ctx.moveTo(160,70);
+			ctx.lineTo(180,60);
+			ctx.lineTo(200,70);
+			ctx.stroke();
+		}
+
+		if (errors>=4) {
+			ctx.beginPath();
+			ctx.moveTo(160,115);
+			ctx.lineTo(165,115);
+			ctx.lineTo(180,100);
+			ctx.stroke();
+		}
+
+		if (errors>=5) {
+			ctx.beginPath();
+			ctx.moveTo(180,100);
+			ctx.lineTo(195,115);
+			ctx.lineTo(200,115);
+			ctx.stroke();
+		}
+	}
+}
+
+function drawMessage(message){
+	var canvas = document.getElementById("myCanvas");
+	if(canvas.getContext){
+		var ctx = canvas.getContext("2d");
+
+		ctx.beginPath();
+		ctx.clearRect(0,0,400,400);
+		ctx.fillStyle = "rgb(0,0,0)";
+		
+		ctx.beginPath();
+		ctx.font = "bold 16px Verdana";
+		ctx.fillText(message,50,50);
+		ctx.stroke();
+	}
 }
